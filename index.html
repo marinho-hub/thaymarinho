@@ -1,483 +1,297 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thay Marinho | A Boladona do Marketing</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #0a0a0a; /* Fundo preto luxo original */
-            color: #f5f5f5;
-        }
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Cormorant Garamond', serif;
-        }
-        .gold-text {
-            color: #D4AF37;
-        }
-        .gold-border {
-            border-color: #D4AF37;
-        }
-        .gold-bg {
-            background-color: #D4AF37;
-        }
-        .hover-gold:hover {
-            color: #D4AF37;
-            transition: 0.3s ease;
-        }
-        .btn-primary {
-            background-color: #f5f5f5;
-            color: #0a0a0a;
-            padding: 12px 32px;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: 1px solid #f5f5f5;
-        }
-        .btn-primary:hover {
-            background-color: transparent;
-            color: #f5f5f5;
-        }
-        .btn-outline {
-            background-color: transparent;
-            color: #f5f5f5;
-            border: 1px solid #f5f5f5;
-            padding: 12px 32px;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        .btn-outline:hover {
-            background-color: #f5f5f5;
-            color: #0a0a0a;
-        }
-        /* Fade in animation */
-        .fade-in {
-            animation: fadeIn 1.5s ease-in-out;
-        }
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-        /* Utility to hide scrollbar but keep functionality */
-        .hide-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .hide-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thay Marinho | Oratória Magnética</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Oratória Magnética: transforme sua voz, presença e comunicação em vendas reais." />
+  <meta name="author" content="Thay Marinho" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Swiper (Prova Social) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+  <style>
+    :root {
+      --bg-dark: #0f0f0f;
+      --bg-soft: #151515;
+      --text-main: #ffffff;
+      --text-muted: #b5b5b5;
+      --accent: #b51c2b;
+      --max-width: 1200px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    section {
+      padding: 80px 20px;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 6px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      background: url("https://raw.githubusercontent.com/marinho-hub/oratoria-magnetica-assets/596fd42eff17a88fe3cc7ea8eaef843baebd8727/header02.jpg") center/cover no-repeat;
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 700px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      color: var(--text-muted);
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    /* SOBRE */
+    .about {
+      background: var(--bg-soft);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about img {
+      border-radius: 12px;
+    }
+
+    /* PRODUTOS */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .product-card {
+      background: var(--bg-soft);
+      padding: 24px;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .product-card h3 {
+      font-size: 20px;
+    }
+
+    .product-card p {
+      color: var(--text-muted);
+      flex: 1;
+    }
+
+    /* PROVA SOCIAL */
+    .swiper {
+      width: 100%;
+      padding-bottom: 40px;
+    }
+
+    .swiper-slide img {
+      border-radius: 12px;
+      height: 450px;
+      object-fit: cover;
+    }
+
+    /* NEWSLETTER */
+    .newsletter {
+      background: var(--bg-soft);
+      text-align: center;
+    }
+
+    .newsletter iframe {
+      width: 100%;
+      max-width: 480px;
+      height: 420px;
+      border: none;
+      margin: 0 auto;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #000;
+      padding: 40px 20px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+    }
+  </style>
 </head>
-<body class="antialiased">
 
-    <!-- 1. MENU SUPERIOR -->
-    <nav class="fixed w-full z-50 bg-black/90 backdrop-blur-md border-b border-gray-800 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-xl tracking-[0.2em] font-light uppercase text-white">
-                Thay <span class="font-bold">Marinho</span>
-            </div>
-            <div class="hidden md:flex space-x-8 text-xs uppercase tracking-widest font-medium text-gray-300">
-                <a href="#sobre" class="hover-gold">Sobre Mim</a>
-                <a href="#solucoes" class="hover-gold">Cursos e Eventos</a>
-                <a href="#mentoria" class="hover-gold">Mentoria</a>
-                <a href="#contato" class="hover-gold">Contato</a>
-                <a href="#newsletter" class="hover-gold">Newsletter</a>
-            </div>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-content">
+      <h1>Transforme sua voz em autoridade e vendas</h1>
+      <p>Oratória Magnética para mulheres que querem presença, poder e resultados reais.</p>
+      <a href="https://metodo-oratoria-magnetica.pages.dev/" class="btn">Conhecer o Método</a>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="about">
+    <div class="container about-grid">
+      <img src="https://raw.githubusercontent.com/marinho-hub/oratoria-magnetica-assets/8594778912a3549fa837ab095167464c74149313/eu.jpg" alt="Thay Marinho">
+      <div>
+        <h2>Prazer, eu sou Thay Marinho</h2>
+        <p>
+          Conhecida como a Boladona do Marketing, ajudo mulheres empreendedoras
+          a saírem da invisibilidade e transformarem comunicação em vendas reais.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUTOS -->
+  <section>
+    <div class="container">
+      <h2>Ecossistema de Produtos</h2>
+
+      <div class="products-grid">
+        <div class="product-card">
+          <h3>Método Oratória Magnética</h3>
+          <p>Programa perpétuo para dominar voz, presença e vendas.</p>
+          <a class="btn" href="https://metodo-oratoria-magnetica.pages.dev/">Acessar</a>
         </div>
-    </nav>
 
-    <!-- 2. HERO SECTION (DOBRA PRINCIPAL) -->
-    <header class="relative h-screen flex items-center justify-center overflow-hidden">
-        <div class="absolute inset-0 bg-cover bg-center opacity-40" style="background-image: url('https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?q=80&w=2069&auto=format&fit=crop');"></div> <!-- Placeholder Image -->
-        <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-black/60"></div>
-        
-        <div class="relative z-10 text-center max-w-4xl px-4 fade-in">
-            <p class="text-sm md:text-base uppercase tracking-[0.3em] text-gray-300 mb-6">Jornalista | Mentora de Oratória & Posicionamento</p>
-            <h1 class="text-5xl md:text-7xl lg:text-8xl font-light text-white mb-6 leading-tight">
-                Boladona do <br>
-                <span class="italic font-serif text-gray-400">Marketing</span>
-            </h1>
-            <p class="text-lg md:text-xl font-light text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
-                Transformo mulheres invisíveis em autoridades magnéticas através da comunicação estratégica e da presença que vende.
-            </p>
-            <a href="#solucoes" class="btn-primary">
-                Junte-se a MESA
-            </a>
+        <div class="product-card">
+          <h3>Mapa de Vendas</h3>
+          <p>Calendário estratégico de vendas 2026.</p>
+          <a class="btn" href="https://boladonasboss.greennsales.com.br/mapadevendas">Comprar</a>
         </div>
-    </header>
 
-    <!-- 3. APRESENTAÇÃO INSTITUCIONAL -->
-    <section id="sobre" class="py-24 bg-[#0f0f0f]">
-        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div class="relative">
-                <div class="absolute -top-4 -left-4 w-24 h-24 border-t border-l border-gray-600"></div>
-                <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1974&auto=format&fit=crop" alt="Thay Marinho" class="w-full h-auto grayscale hover:grayscale-0 transition duration-700 object-cover shadow-2xl">
-                <div class="absolute -bottom-4 -right-4 w-24 h-24 border-b border-r border-gray-600"></div>
-            </div>
-            
-            <div>
-                <h2 class="text-4xl md:text-5xl mb-8 font-light leading-tight">
-                    Prazer, eu sou <br> <span class="italic text-white">Thay Marinho.</span>
-                </h2>
-                <h3 class="text-sm uppercase tracking-widest text-gray-400 mb-6 border-l-2 border-white pl-4">
-                    Conhecida como a Boladona do Marketing
-                </h3>
-                <div class="space-y-6 text-gray-300 font-light leading-relaxed text-lg">
-                    <p>
-                        Acreditei por anos que meus títulos acadêmicos seriam meu escudo. Estava errada. No mercado atual, competência sem visibilidade é apenas um segredo bem guardado.
-                    </p>
-                    <p>
-                        Com MBA em Marketing e raízes profundas no Jornalismo, decidi romper o silêncio. Hoje, guio mulheres empreendedoras que cansaram de ser ignoradas e decidiram ocupar, com elegância e estratégia, o lugar que lhes pertence.
-                    </p>
-                    <p>
-                        Minha assinatura é clara: oratória que conecta, presença que comanda e narrativas que convertem seguidores em clientes de alto valor.
-                    </p>
-                </div>
-            </div>
+        <div class="product-card">
+          <h3>Mesa das Boladonas</h3>
+          <p>Evento presencial de networking feminino.</p>
+          <a class="btn" href="https://boladonasboss.greennsales.com.br/mesa-das-boladonas">Lista de Espera</a>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- 4. BLOCO DE AUTORIDADE (BULLETS) -->
-    <section class="py-20 border-t border-gray-800">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-gray-800">
-                <div class="p-6">
-                    <p class="text-4xl font-serif text-white mb-2 italic">8+</p>
-                    <p class="text-xs uppercase tracking-widest text-gray-400">Anos de Mercado</p>
-                </div>
-                <div class="p-6">
-                    <p class="text-4xl font-serif text-white mb-2 italic">MBA</p>
-                    <p class="text-xs uppercase tracking-widest text-gray-400">Marketing & Mídias</p>
-                </div>
-                <div class="p-6">
-                    <p class="text-4xl font-serif text-white mb-2 italic">Host</p>
-                    <p class="text-xs uppercase tracking-widest text-gray-400">Rádio PLFM & PodManas</p>
-                </div>
-                <div class="p-6">
-                    <p class="text-4xl font-serif text-white mb-2 italic">Founder</p>
-                    <p class="text-xs uppercase tracking-widest text-gray-400">Mesa das Boladonas</p>
-                </div>
-            </div>
+  <!-- PROVA SOCIAL -->
+  <section>
+    <div class="container">
+      <h2>Resultados Reais</h2>
+
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="https://raw.githubusercontent.com/marinho-hub/oratoria-magnetica-assets/2b277ccef1b80c423f8b5612119bc532fe56ce9e/1.png"></div>
+          <div class="swiper-slide"><img src="https://raw.githubusercontent.com/marinho-hub/oratoria-magnetica-assets/2b277ccef1b80c423f8b5612119bc532fe56ce9e/11.png"></div>
+          <div class="swiper-slide"><img src="https://raw.githubusercontent.com/marinho-hub/oratoria-magnetica-assets/2b277ccef1b80c423f8b5612119bc532fe56ce9e/3.png"></div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- 5. PROVA DE AUTORIDADE EXTERNA -->
-    <section class="py-12 bg-black border-y border-gray-800">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <p class="text-xs uppercase tracking-[0.3em] text-gray-500 mb-10">Marcas e Projetos que levam minha voz</p>
-            <div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-40 grayscale hover:opacity-80 transition duration-500">
-                <span class="text-2xl font-serif">Rádio PLFM</span>
-                <span class="text-2xl font-serif">PODMANAS</span>
-                <span class="text-2xl font-serif">Mesa das Boladonas</span>
-                <span class="text-2xl font-serif">Reunião de Negócios</span>
-            </div>
-        </div>
-    </section>
+  <!-- NEWSLETTER -->
+  <section class="newsletter">
+    <div class="container">
+      <h2>Receba Conteúdos Exclusivos</h2>
+      <iframe src="https://preview.mailerlite.io/forms/1889763/175314952354006371/share"></iframe>
+    </div>
+  </section>
 
-    <!-- 6. PRODUTOS / SOLUÇÕES (ECOSSISTEMA) -->
-    <section id="solucoes" class="py-24 bg-[#0a0a0a]">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-20">
-                <h2 class="text-4xl md:text-5xl font-light text-white mb-4">Ecossistema de <span class="italic font-serif">Poder</span></h2>
-                <p class="text-gray-400 font-light max-w-xl mx-auto">Do posicionamento inicial à escala do seu negócio. Escolha a sua MESA.</p>
-            </div>
+  <!-- FOOTER -->
+  <footer>
+    <p>© Thay Marinho • Todos os direitos reservados</p>
+    <p>
+      <a href="https://wa.me/5531984079968?text=Oi,%20vim%20do%20site%20da%20Thay%20Marinho%20e%20tenho%20interesse%20em%20palestras%20ou%20eventos.">
+        Falar com a equipe
+      </a>
+    </p>
+  </footer>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                
-                <!-- Card 1: Oratória Magnética -->
-                <div class="group relative h-[450px] overflow-hidden border border-gray-800 bg-black">
-                    <!-- Imagem de Fundo -->
-                    <img src="https://images.unsplash.com/photo-1493655161922-ef98929de9d8?q=80&w=2070&auto=format&fit=crop" alt="Oratória Magnética" class="absolute inset-0 w-full h-full object-cover opacity-50 transition duration-700 group-hover:scale-105 group-hover:opacity-30">
-                    
-                    <!-- Gradiente para leitura -->
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
-
-                    <!-- Conteúdo -->
-                    <div class="relative h-full flex flex-col justify-end p-10 transition-all duration-500">
-                        <span class="text-xs uppercase tracking-widest text-gray-400 mb-2 transform transition duration-500 translate-y-0">Método</span>
-                        <h3 class="text-2xl text-white font-serif italic mb-2">Oratória Magnética</h3>
-                        
-                        <!-- Descrição com Slide Up -->
-                        <div class="max-h-0 overflow-hidden group-hover:max-h-48 transition-all duration-700 ease-in-out opacity-0 group-hover:opacity-100">
-                            <p class="text-gray-300 font-light text-sm leading-relaxed mb-6 pt-4 border-t border-gray-700/50 mt-2">
-                                O método de 21 dias para destravar sua comunicação, eliminar vícios de linguagem e falar com a segurança de uma líder nata.
-                            </p>
-                            <a href="#" class="inline-block text-xs uppercase tracking-widest border-b border-gray-600 pb-1 hover:border-white transition text-white">
-                                Detalhes
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 2: Instagram para Negócios -->
-                <div class="group relative h-[450px] overflow-hidden border border-gray-800 bg-black">
-                    <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1974&auto=format&fit=crop" alt="Instagram para Negócios" class="absolute inset-0 w-full h-full object-cover opacity-50 transition duration-700 group-hover:scale-105 group-hover:opacity-30">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
-
-                    <div class="relative h-full flex flex-col justify-end p-10 transition-all duration-500">
-                        <span class="text-xs uppercase tracking-widest text-gray-400 mb-2">Mentoria Coletiva</span>
-                        <h3 class="text-2xl text-white font-serif italic mb-2">Instagram para Negócios</h3>
-                        
-                        <div class="max-h-0 overflow-hidden group-hover:max-h-48 transition-all duration-700 ease-in-out opacity-0 group-hover:opacity-100">
-                            <p class="text-gray-300 font-light text-sm leading-relaxed mb-6 pt-4 border-t border-gray-700/50 mt-2">
-                                4 semanas de implementação estratégica. Transforme seu perfil institucional em uma máquina de atração de clientes qualificados.
-                            </p>
-                            <a href="#" class="inline-block text-xs uppercase tracking-widest border-b border-gray-600 pb-1 hover:border-white transition text-white">
-                                Aplicação
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                 <!-- Card 3: Mesa das Boladonas -->
-                 <div class="group relative h-[450px] overflow-hidden border border-gray-800 bg-black">
-                    <div class="absolute top-0 right-0 bg-white text-black text-[10px] uppercase font-bold px-3 py-1 z-20">Experience</div>
-                    <img src="https://images.unsplash.com/photo-1560439514-4e9645039924?q=80&w=2070&auto=format&fit=crop" alt="Mesa das Boladonas" class="absolute inset-0 w-full h-full object-cover opacity-50 transition duration-700 group-hover:scale-105 group-hover:opacity-30">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
-
-                    <div class="relative h-full flex flex-col justify-end p-10 transition-all duration-500">
-                        <span class="text-xs uppercase tracking-widest text-gray-400 mb-2">Presencial</span>
-                        <h3 class="text-2xl text-white font-serif italic mb-2">Mesa das Boladonas</h3>
-                        
-                        <div class="max-h-0 overflow-hidden group-hover:max-h-48 transition-all duration-700 ease-in-out opacity-0 group-hover:opacity-100">
-                            <p class="text-gray-300 font-light text-sm leading-relaxed mb-6 pt-4 border-t border-gray-700/50 mt-2">
-                                Não é apenas networking. É um ambiente de alianças estratégicas. Sente-se à mesa com mulheres que estão jogando o jogo alto.
-                            </p>
-                            <a href="#" class="inline-block text-xs uppercase tracking-widest border-b border-gray-600 pb-1 hover:border-white transition text-white">
-                                Lista de Espera
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                 <!-- Card 4: Desafio Postar para Vender -->
-                 <div class="group relative h-[450px] overflow-hidden border border-gray-800 bg-black">
-                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2032&auto=format&fit=crop" alt="Desafio Postar para Vender" class="absolute inset-0 w-full h-full object-cover opacity-50 transition duration-700 group-hover:scale-105 group-hover:opacity-30">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
-
-                    <div class="relative h-full flex flex-col justify-end p-10 transition-all duration-500">
-                        <span class="text-xs uppercase tracking-widest text-gray-400 mb-2">Acelerador</span>
-                        <h3 class="text-2xl text-white font-serif italic mb-2">Desafio Postar para Vender</h3>
-                        
-                        <div class="max-h-0 overflow-hidden group-hover:max-h-48 transition-all duration-700 ease-in-out opacity-0 group-hover:opacity-100">
-                            <p class="text-gray-300 font-light text-sm leading-relaxed mb-6 pt-4 border-t border-gray-700/50 mt-2">
-                                10 dias intensivos no WhatsApp com roteiros e comandos práticos para gerar caixa rápido através da sua audiência atual.
-                            </p>
-                            <a href="#" class="inline-block text-xs uppercase tracking-widest border-b border-gray-600 pb-1 hover:border-white transition text-white">
-                                Começar Agora
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 5: Mapas & Guias -->
-                <div class="group relative h-[450px] overflow-hidden border border-gray-800 bg-black">
-                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop" alt="Mapas & Guias" class="absolute inset-0 w-full h-full object-cover opacity-50 transition duration-700 group-hover:scale-105 group-hover:opacity-30">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
-
-                    <div class="relative h-full flex flex-col justify-end p-10 transition-all duration-500">
-                        <span class="text-xs uppercase tracking-widest text-gray-400 mb-2">Acervo Digital</span>
-                        <h3 class="text-2xl text-white font-serif italic mb-2">Mapas & Guias</h3>
-                        
-                        <div class="max-h-0 overflow-hidden group-hover:max-h-48 transition-all duration-700 ease-in-out opacity-0 group-hover:opacity-100">
-                            <p class="text-gray-300 font-light text-sm leading-relaxed mb-6 pt-4 border-t border-gray-700/50 mt-2">
-                                Mapa de Vendas 2026, Guia Definitivo do Perfil e as 30 Estratégias. Ferramentas táticas para execução imediata.
-                            </p>
-                            <a href="#" class="inline-block text-xs uppercase tracking-widest border-b border-gray-600 pb-1 hover:border-white transition text-white">
-                                Acessar Loja
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 6: Boladona Boss -->
-                <div id="mentoria" class="group relative h-[450px] overflow-hidden border border-white/20 bg-gray-900">
-                    <div class="absolute inset-0 bg-gradient-to-br from-gray-900 to-black opacity-90 group-hover:opacity-80 transition duration-500 z-10"></div>
-                    <!-- Imagem High Ticket -->
-                    <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=2071&auto=format&fit=crop" alt="Boladona Boss" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-105 transition duration-700 z-0">
-
-                    <div class="relative h-full flex flex-col justify-end p-10 transition-all duration-500 z-20">
-                        <span class="text-xs uppercase tracking-widest text-gray-300 mb-2">High Ticket</span>
-                        <h3 class="text-2xl text-white font-serif italic mb-2">Boladona Boss</h3>
-                        
-                        <div class="max-h-0 overflow-hidden group-hover:max-h-48 transition-all duration-700 ease-in-out opacity-0 group-hover:opacity-100">
-                            <p class="text-gray-400 font-light text-sm leading-relaxed mb-6 pt-4 border-t border-gray-700/50 mt-2">
-                                Acompanhamento individual e cirúrgico. 4 encontros para desenhar seu posicionamento único. Apenas sob seleção.
-                            </p>
-                            <a href="#" class="inline-block text-xs uppercase tracking-widest border-b border-gray-600 pb-1 hover:border-white transition text-white">
-                                Aplicar para Vaga
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- 7. FRASE DE POSICIONAMENTO -->
-    <section class="py-32 bg-fixed bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1542327897-4141b355e20e?q=80&w=2067&auto=format&fit=crop');">
-        <div class="absolute inset-0 bg-black/80"></div>
-        <div class="relative z-10 container mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-5xl font-light text-white leading-tight font-serif italic">
-                "Você não precisa de mais um certificado.<br>
-                Você precisa que o mundo saiba quem você é."
-            </h2>
-            <div class="mt-8 w-16 h-1 bg-white mx-auto"></div>
-        </div>
-    </section>
-
-    <!-- 8. STORYTELLING -->
-    <section class="py-24 bg-[#0a0a0a]">
-        <div class="max-w-4xl mx-auto px-6">
-            <h2 class="text-3xl font-serif text-white mb-12 text-center italic">Do Bastidor ao Protagonismo</h2>
-            
-            <div class="space-y-8 text-gray-300 font-light text-lg leading-loose text-justify">
-                <p>
-                    Eu vim do zero. Não herdei império, não tinha sobrenome conhecido. Minha única moeda de troca era a dedicação acadêmica. Colecionei diplomas na parede, esperando o dia em que eles falariam por mim. <strong class="text-white">Esse dia nunca chegou.</strong>
-                </p>
-                <p>
-                    Vi profissionais com metade do meu conhecimento faturando o triplo, simplesmente porque tinham coragem de abrir a câmera e falar. Aquilo me incomodou profundamente. Não era injustiça, era estratégia. Eles entenderam o jogo da atenção antes de mim.
-                </p>
-                <p>
-                    Foi quando decidi unir o rigor do Jornalismo com a agressividade tática do Marketing. Parei de pedir licença e comecei a ocupar espaço. Criei minha rádio, fundei minha mesa, lancei minha voz.
-                </p>
-                <p class="border-l-4 border-white pl-6 italic text-white">
-                    Entendi que mulheres incríveis permanecem invisíveis não por falta de talento, mas por falharem na única habilidade que conecta o expert ao dinheiro: a comunicação.
-                </p>
-                <p>
-                    Hoje, minha missão não é te ensinar teoria. É te dar a postura, o tom e a estratégia para que você nunca mais seja ignorada em uma sala de negociação.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 9. PROVA SOCIAL (CARROSSEL DE DEPOIMENTOS EM IMAGENS) -->
-    <section class="py-24 border-t border-gray-800 bg-[#0f0f0f]">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-center text-3xl font-light text-white mb-4">Resultados Reais de <span class="italic font-serif">Mulheres Reais</span></h2>
-            <p class="text-center text-xs uppercase tracking-widest text-gray-500 mb-12">Arraste para o lado para ver mais resultados <span class="inline-block ml-2 text-base">→</span></p>
-            
-            <!-- Carrossel Container -->
-            <div class="flex overflow-x-auto gap-6 pb-8 hide-scrollbar snap-x snap-mandatory cursor-grab active:cursor-grabbing px-4 md:px-0">
-                
-                <!-- Depoimento 1 -->
-                <div class="min-w-[280px] md:min-w-[320px] h-[450px] bg-gray-900 snap-center shrink-0 border border-gray-800 hover:border-gray-600 transition duration-300 relative group overflow-hidden">
-                    <!-- Placeholder Imagem - Substituir pelo link real depois -->
-                    <img src="https://images.unsplash.com/photo-1616587226960-4a03badbe8bf?q=80&w=1000&auto=format&fit=crop" alt="Depoimento 1" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition duration-500 grayscale group-hover:grayscale-0">
-                    <div class="absolute bottom-4 left-4 text-xs text-white uppercase tracking-wider bg-black/50 px-2 py-1">Depoimento 01</div>
-                </div>
-
-                <!-- Depoimento 2 -->
-                <div class="min-w-[280px] md:min-w-[320px] h-[450px] bg-gray-900 snap-center shrink-0 border border-gray-800 hover:border-gray-600 transition duration-300 relative group overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1616587226960-4a03badbe8bf?q=80&w=1000&auto=format&fit=crop" alt="Depoimento 2" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition duration-500 grayscale group-hover:grayscale-0">
-                    <div class="absolute bottom-4 left-4 text-xs text-white uppercase tracking-wider bg-black/50 px-2 py-1">Depoimento 02</div>
-                </div>
-
-                <!-- Depoimento 3 -->
-                <div class="min-w-[280px] md:min-w-[320px] h-[450px] bg-gray-900 snap-center shrink-0 border border-gray-800 hover:border-gray-600 transition duration-300 relative group overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1616587226960-4a03badbe8bf?q=80&w=1000&auto=format&fit=crop" alt="Depoimento 3" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition duration-500 grayscale group-hover:grayscale-0">
-                    <div class="absolute bottom-4 left-4 text-xs text-white uppercase tracking-wider bg-black/50 px-2 py-1">Depoimento 03</div>
-                </div>
-
-                <!-- Depoimento 4 -->
-                <div class="min-w-[280px] md:min-w-[320px] h-[450px] bg-gray-900 snap-center shrink-0 border border-gray-800 hover:border-gray-600 transition duration-300 relative group overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1616587226960-4a03badbe8bf?q=80&w=1000&auto=format&fit=crop" alt="Depoimento 4" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition duration-500 grayscale group-hover:grayscale-0">
-                    <div class="absolute bottom-4 left-4 text-xs text-white uppercase tracking-wider bg-black/50 px-2 py-1">Depoimento 04</div>
-                </div>
-
-                <!-- Depoimento 5 -->
-                <div class="min-w-[280px] md:min-w-[320px] h-[450px] bg-gray-900 snap-center shrink-0 border border-gray-800 hover:border-gray-600 transition duration-300 relative group overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1616587226960-4a03badbe8bf?q=80&w=1000&auto=format&fit=crop" alt="Depoimento 5" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition duration-500 grayscale group-hover:grayscale-0">
-                    <div class="absolute bottom-4 left-4 text-xs text-white uppercase tracking-wider bg-black/50 px-2 py-1">Depoimento 05</div>
-                </div>
-
-                <!-- Depoimento 6 -->
-                <div class="min-w-[280px] md:min-w-[320px] h-[450px] bg-gray-900 snap-center shrink-0 border border-gray-800 hover:border-gray-600 transition duration-300 relative group overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1616587226960-4a03badbe8bf?q=80&w=1000&auto=format&fit=crop" alt="Depoimento 6" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition duration-500 grayscale group-hover:grayscale-0">
-                    <div class="absolute bottom-4 left-4 text-xs text-white uppercase tracking-wider bg-black/50 px-2 py-1">Depoimento 06</div>
-                </div>
-
-                <!-- Depoimento 7 -->
-                <div class="min-w-[280px] md:min-w-[320px] h-[450px] bg-gray-900 snap-center shrink-0 border border-gray-800 hover:border-gray-600 transition duration-300 relative group overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1616587226960-4a03badbe8bf?q=80&w=1000&auto=format&fit=crop" alt="Depoimento 7" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition duration-500 grayscale group-hover:grayscale-0">
-                    <div class="absolute bottom-4 left-4 text-xs text-white uppercase tracking-wider bg-black/50 px-2 py-1">Depoimento 07</div>
-                </div>
-
-                <!-- Depoimento 8 -->
-                <div class="min-w-[280px] md:min-w-[320px] h-[450px] bg-gray-900 snap-center shrink-0 border border-gray-800 hover:border-gray-600 transition duration-300 relative group overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1616587226960-4a03badbe8bf?q=80&w=1000&auto=format&fit=crop" alt="Depoimento 8" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition duration-500 grayscale group-hover:grayscale-0">
-                    <div class="absolute bottom-4 left-4 text-xs text-white uppercase tracking-wider bg-black/50 px-2 py-1">Depoimento 08</div>
-                </div>
-
-                <!-- Depoimento 9 -->
-                <div class="min-w-[280px] md:min-w-[320px] h-[450px] bg-gray-900 snap-center shrink-0 border border-gray-800 hover:border-gray-600 transition duration-300 relative group overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1616587226960-4a03badbe8bf?q=80&w=1000&auto=format&fit=crop" alt="Depoimento 9" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition duration-500 grayscale group-hover:grayscale-0">
-                    <div class="absolute bottom-4 left-4 text-xs text-white uppercase tracking-wider bg-black/50 px-2 py-1">Depoimento 09</div>
-                </div>
-
-                <!-- Depoimento 10 -->
-                <div class="min-w-[280px] md:min-w-[320px] h-[450px] bg-gray-900 snap-center shrink-0 border border-gray-800 hover:border-gray-600 transition duration-300 relative group overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1616587226960-4a03badbe8bf?q=80&w=1000&auto=format&fit=crop" alt="Depoimento 10" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition duration-500 grayscale group-hover:grayscale-0">
-                    <div class="absolute bottom-4 left-4 text-xs text-white uppercase tracking-wider bg-black/50 px-2 py-1">Depoimento 10</div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- 10. SUPORTE -->
-    <section id="contato" class="py-20 bg-black">
-        <div class="max-w-3xl mx-auto px-6 text-center">
-            <h3 class="text-2xl text-white font-serif italic mb-6">Precisa de direcionamento?</h3>
-            <p class="text-gray-400 font-light mb-8">
-                Se você está em dúvida sobre qual o próximo passo ideal para o seu momento de negócio, minha equipe pode te orientar.
-            </p>
-            <a href="#" class="btn-outline inline-block">
-                Falar no WhatsApp
-            </a>
-        </div>
-    </section>
-
-    <!-- 11. NEWSLETTER -->
-    <section id="newsletter" class="py-20 border-t border-gray-800 bg-[#0a0a0a]">
-        <div class="max-w-xl mx-auto px-6 text-center">
-            <h3 class="text-lg text-white font-medium uppercase tracking-widest mb-2">Carta à Boladona</h3>
-            <p class="text-gray-500 text-sm mb-8 font-light">Estratégias de comunicação e vendas direto na sua caixa de entrada. Sem spam, apenas ouro.</p>
-            <form class="flex flex-col gap-4">
-                <input type="text" placeholder="Seu Nome" class="bg-transparent border-b border-gray-700 text-white py-3 px-4 focus:outline-none focus:border-white transition font-light text-sm">
-                <input type="email" placeholder="Seu Melhor E-mail" class="bg-transparent border-b border-gray-700 text-white py-3 px-4 focus:outline-none focus:border-white transition font-light text-sm">
-                <button type="button" class="mt-4 bg-white text-black py-3 px-8 text-xs uppercase tracking-[0.2em] font-bold hover:bg-gray-200 transition">
-                    Inscrever-se
-                </button>
-            </form>
-        </div>
-    </section>
-
-    <!-- 12. RODAPÉ -->
-    <footer class="bg-black py-12 border-t border-gray-900">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="text-gray-500 text-xs tracking-widest uppercase">
-                &copy; 2025 Thay Marinho. Todos os direitos reservados.
-            </div>
-            <div class="flex gap-6 text-gray-500 text-xs uppercase tracking-widest">
-                <a href="#" class="hover:text-white transition">Instagram</a>
-                <a href="#" class="hover:text-white transition">LinkedIn</a>
-                <a href="#" class="hover:text-white transition">Spotify</a>
-            </div>
-            <div class="text-gray-600 text-[10px]">
-                High-Ticket Strategy
-            </div>
-        </div>
-    </footer>
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    new Swiper('.swiper', {
+      slidesPerView: 1.2,
+      spaceBetween: 20,
+      breakpoints: {
+        768: {
+          slidesPerView: 3
+        }
+      }
+    });
+  </script>
 
 </body>
 </html>
