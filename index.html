@@ -1,297 +1,326 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thay Marinho | Oratória Magnética</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- SEO -->
-  <meta name="description" content="Oratória Magnética: transforme sua voz, presença e comunicação em vendas reais." />
-  <meta name="author" content="Thay Marinho" />
+<title>Thay Marinho | Oratória Magnética</title>
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Swiper (Prova Social) -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<style>
+:root {
+  --bg: #0a0a0a;
+  --bg-soft: #0f0f0f;
+  --white: #f5f5f5;
+  --gray: #9ca3af;
+  --gold: #d4af37;
+}
 
-  <style>
-    :root {
-      --bg-dark: #0f0f0f;
-      --bg-soft: #151515;
-      --text-main: #ffffff;
-      --text-muted: #b5b5b5;
-      --accent: #b51c2b;
-      --max-width: 1200px;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: var(--bg);
+  color: var(--white);
+  line-height: 1.6;
+}
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg-dark);
-      color: var(--text-main);
-      line-height: 1.6;
-    }
+h1, h2, h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+}
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 24px;
+}
 
-    section {
-      padding: 80px 20px;
-    }
+/* BOTÕES */
+.btn {
+  display: inline-block;
+  padding: 14px 36px;
+  border: 1px solid var(--white);
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 2px;
+  transition: 0.3s;
+}
 
-    .container {
-      max-width: var(--max-width);
-      margin: 0 auto;
-    }
+.btn.primary {
+  background: var(--white);
+  color: var(--bg);
+}
 
-    .btn {
-      display: inline-block;
-      padding: 14px 28px;
-      border-radius: 6px;
-      background: var(--accent);
-      color: #fff;
-      font-weight: 600;
-      transition: 0.3s;
-    }
+.btn.primary:hover {
+  background: transparent;
+  color: var(--white);
+}
 
-    .btn:hover {
-      opacity: 0.9;
-    }
+.btn.outline:hover {
+  background: var(--white);
+  color: var(--bg);
+}
 
-    /* HERO */
-    .hero {
-      min-height: 100vh;
-      background: url("https://raw.githubusercontent.com/marinho-hub/oratoria-magnetica-assets/596fd42eff17a88fe3cc7ea8eaef843baebd8727/header02.jpg") center/cover no-repeat;
-      position: relative;
-      display: flex;
-      align-items: center;
-    }
+/* HEADER */
+header {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.6);
-    }
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("https://raw.githubusercontent.com/marinho-hub/oratoria-magnetica-assets/main/hero.jpg") center/cover no-repeat;
+  opacity: 0.4;
+}
 
-    .hero-content {
-      position: relative;
-      max-width: 700px;
-    }
+header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, #0a0a0a, transparent 60%);
+}
 
-    .hero h1 {
-      font-size: 48px;
-      font-weight: 800;
-      margin-bottom: 20px;
-    }
+header .content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+}
 
-    .hero p {
-      color: var(--text-muted);
-      font-size: 18px;
-      margin-bottom: 30px;
-    }
+header p {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 12px;
+  color: var(--gray);
+  margin-bottom: 20px;
+}
 
-    /* SOBRE */
-    .about {
-      background: var(--bg-soft);
-    }
+header h1 {
+  font-size: clamp(3rem, 6vw, 6rem);
+  margin-bottom: 24px;
+}
 
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: center;
-    }
+header span {
+  font-style: italic;
+  color: #cfcfcf;
+}
 
-    .about img {
-      border-radius: 12px;
-    }
+header .subtitle {
+  font-size: 18px;
+  color: #d1d5db;
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
 
-    /* PRODUTOS */
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-    }
+/* SEÇÕES */
+section {
+  padding: 100px 0;
+}
 
-    .product-card {
-      background: var(--bg-soft);
-      padding: 24px;
-      border-radius: 12px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
+.bg-soft {
+  background: var(--bg-soft);
+}
 
-    .product-card h3 {
-      font-size: 20px;
-    }
+.section-title {
+  text-align: center;
+  margin-bottom: 80px;
+}
 
-    .product-card p {
-      color: var(--text-muted);
-      flex: 1;
-    }
+.section-title h2 {
+  font-size: 42px;
+}
 
-    /* PROVA SOCIAL */
-    .swiper {
-      width: 100%;
-      padding-bottom: 40px;
-    }
+.section-title p {
+  color: var(--gray);
+  margin-top: 12px;
+}
 
-    .swiper-slide img {
-      border-radius: 12px;
-      height: 450px;
-      object-fit: cover;
-    }
+/* GRID */
+.grid {
+  display: grid;
+  gap: 32px;
+}
 
-    /* NEWSLETTER */
-    .newsletter {
-      background: var(--bg-soft);
-      text-align: center;
-    }
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
 
-    .newsletter iframe {
-      width: 100%;
-      max-width: 480px;
-      height: 420px;
-      border: none;
-      margin: 0 auto;
-    }
+/* CARDS */
+.card {
+  position: relative;
+  height: 420px;
+  border: 1px solid #1f2937;
+  overflow: hidden;
+}
 
-    /* FOOTER */
-    footer {
-      background: #000;
-      padding: 40px 20px;
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 14px;
-    }
+.card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.45;
+  transition: 0.5s;
+}
 
-    @media (max-width: 768px) {
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
+.card:hover img {
+  transform: scale(1.05);
+  opacity: 0.25;
+}
 
-      .hero h1 {
-        font-size: 36px;
-      }
-    }
-  </style>
+.card .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, #000, transparent 60%);
+}
+
+.card .content {
+  position: absolute;
+  bottom: 0;
+  padding: 32px;
+}
+
+.card span {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gray);
+}
+
+.card h3 {
+  font-size: 26px;
+  margin: 10px 0;
+}
+
+/* NEWSLETTER */
+.newsletter {
+  max-width: 480px;
+  margin: auto;
+  text-align: center;
+}
+
+.newsletter input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #374151;
+  padding: 14px;
+  color: var(--white);
+  margin-bottom: 24px;
+  font-size: 14px;
+}
+
+.newsletter button {
+  width: 100%;
+  cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+  padding: 40px 0;
+  border-top: 1px solid #111827;
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--gray);
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 70px 0;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container hero-content">
-      <h1>Transforme sua voz em autoridade e vendas</h1>
-      <p>Oratória Magnética para mulheres que querem presença, poder e resultados reais.</p>
-      <a href="https://metodo-oratoria-magnetica.pages.dev/" class="btn">Conhecer o Método</a>
-    </div>
-  </section>
-
-  <!-- SOBRE -->
-  <section class="about">
-    <div class="container about-grid">
-      <img src="https://raw.githubusercontent.com/marinho-hub/oratoria-magnetica-assets/8594778912a3549fa837ab095167464c74149313/eu.jpg" alt="Thay Marinho">
-      <div>
-        <h2>Prazer, eu sou Thay Marinho</h2>
-        <p>
-          Conhecida como a Boladona do Marketing, ajudo mulheres empreendedoras
-          a saírem da invisibilidade e transformarem comunicação em vendas reais.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRODUTOS -->
-  <section>
-    <div class="container">
-      <h2>Ecossistema de Produtos</h2>
-
-      <div class="products-grid">
-        <div class="product-card">
-          <h3>Método Oratória Magnética</h3>
-          <p>Programa perpétuo para dominar voz, presença e vendas.</p>
-          <a class="btn" href="https://metodo-oratoria-magnetica.pages.dev/">Acessar</a>
-        </div>
-
-        <div class="product-card">
-          <h3>Mapa de Vendas</h3>
-          <p>Calendário estratégico de vendas 2026.</p>
-          <a class="btn" href="https://boladonasboss.greennsales.com.br/mapadevendas">Comprar</a>
-        </div>
-
-        <div class="product-card">
-          <h3>Mesa das Boladonas</h3>
-          <p>Evento presencial de networking feminino.</p>
-          <a class="btn" href="https://boladonasboss.greennsales.com.br/mesa-das-boladonas">Lista de Espera</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROVA SOCIAL -->
-  <section>
-    <div class="container">
-      <h2>Resultados Reais</h2>
-
-      <div class="swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide"><img src="https://raw.githubusercontent.com/marinho-hub/oratoria-magnetica-assets/2b277ccef1b80c423f8b5612119bc532fe56ce9e/1.png"></div>
-          <div class="swiper-slide"><img src="https://raw.githubusercontent.com/marinho-hub/oratoria-magnetica-assets/2b277ccef1b80c423f8b5612119bc532fe56ce9e/11.png"></div>
-          <div class="swiper-slide"><img src="https://raw.githubusercontent.com/marinho-hub/oratoria-magnetica-assets/2b277ccef1b80c423f8b5612119bc532fe56ce9e/3.png"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- NEWSLETTER -->
-  <section class="newsletter">
-    <div class="container">
-      <h2>Receba Conteúdos Exclusivos</h2>
-      <iframe src="https://preview.mailerlite.io/forms/1889763/175314952354006371/share"></iframe>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>© Thay Marinho • Todos os direitos reservados</p>
-    <p>
-      <a href="https://wa.me/5531984079968?text=Oi,%20vim%20do%20site%20da%20Thay%20Marinho%20e%20tenho%20interesse%20em%20palestras%20ou%20eventos.">
-        Falar com a equipe
-      </a>
+<!-- HERO -->
+<header>
+  <div class="content">
+    <p>Jornalista • Mentora de Oratória</p>
+    <h1>Boladona do<br><span>Marketing</span></h1>
+    <p class="subtitle">
+      Transformo mulheres invisíveis em autoridades magnéticas através da comunicação estratégica.
     </p>
-  </footer>
+    <a href="#solucoes" class="btn primary">Entrar na Mesa</a>
+  </div>
+</header>
 
-  <!-- JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script>
-    new Swiper('.swiper', {
-      slidesPerView: 1.2,
-      spaceBetween: 20,
-      breakpoints: {
-        768: {
-          slidesPerView: 3
-        }
-      }
-    });
-  </script>
+<!-- SOLUÇÕES -->
+<section id="solucoes">
+  <div class="container">
+    <div class="section-title">
+      <h2>Ecossistema de Poder</h2>
+      <p>Escolha o próximo passo da sua comunicação</p>
+    </div>
+
+    <div class="grid grid-3">
+      <div class="card">
+        <img src="https://raw.githubusercontent.com/marinho-hub/oratoria-magnetica-assets/main/card1.jpg">
+        <div class="overlay"></div>
+        <div class="content">
+          <span>Método</span>
+          <h3>Oratória Magnética</h3>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://raw.githubusercontent.com/marinho-hub/oratoria-magnetica-assets/main/card2.jpg">
+        <div class="overlay"></div>
+        <div class="content">
+          <span>Mentoria</span>
+          <h3>Instagram para Negócios</h3>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://raw.githubusercontent.com/marinho-hub/oratoria-magnetica-assets/main/card3.jpg">
+        <div class="overlay"></div>
+        <div class="content">
+          <span>Presencial</span>
+          <h3>Mesa das Boladonas</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="bg-soft">
+  <div class="newsletter">
+    <h3>Carta à Boladona</h3>
+    <p style="color:#9ca3af;margin:16px 0 40px">
+      Conteúdo estratégico direto na sua caixa de entrada.
+    </p>
+
+    <!-- AQUI você pode colar o FORM do MailerLite depois -->
+    <input type="text" placeholder="Seu nome">
+    <input type="email" placeholder="Seu melhor e-mail">
+    <button class="btn primary">Receber o Ouro</button>
+  </div>
+</section>
+
+<footer>
+  © 2025 Thay Marinho • Comunicação de Alta Autoridade
+</footer>
 
 </body>
 </html>
